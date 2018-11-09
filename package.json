@@ -1,5 +1,5 @@
 {
-  "name": "healthcheck",
+  "name": "@identity.com/healthcheck",
   "version": "1.0.0",
   "description": "Geth node healthcheck service with heartbeat feature",
   "main": "index.js",
@@ -7,8 +7,12 @@
     "start": "node index.js",
     "test": "npx mocha"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Identity.com Community",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/identity-com/ethereum-node-healthcheck.git"
+  },
   "dependencies": {
     "express": "^4.16.4",
     "newrelic": "^4.10.0",
