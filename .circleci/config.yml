@@ -1,0 +1,29 @@
+version: 2
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+    - build
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.12
+    steps:
+    - checkout
+
+    # Download and cache dependencies
+    - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "package.json" }}-{{checksum "package-lock.json"}}
+
+    - run: npm install
+
+    - save_cache:
+        paths:
+        - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}-{{checksum "package-lock.json"}}
+
+    - run: npm run test
+    - run: npm run lint
