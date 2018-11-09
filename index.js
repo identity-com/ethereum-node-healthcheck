@@ -8,8 +8,10 @@ app.use(express.json());
 
 // schedule tasks to be run on the server
 // we want this to be used as a heartbeat
-// we don't care about the response result as the stats is going to NewRelic
-process.env.HEARTBEAT_DISABLED || cron.schedule('* * * * *', () => healthcheck().then(console.log, console.error));
+if (!process.env.HEARTBEAT_DISABLED) {
+  // we don't care about the response result as the stats is going to NewRelic
+  cron.schedule('* * * * *', () => healthcheck().then(console.log, console.error));
+}
 
 app.get('/health/status', async (req, res) => {
   const { status, response } = await healthcheck(req.query.etherscan, req.query.threshold);

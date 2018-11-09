@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "npx mocha"
+    "test": "npx mocha",
+    "lint": "npx eslint ."
   },
   "author": "Identity.com Community",
   "license": "MIT",
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
+    "lodash": "^4.17.11",
     "newrelic": "^4.10.0",
     "node-cron": "^2.0.3",
     "request-promise-native": "^1.0.5",
@@ -22,7 +24,13 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.5.0",
     "mocha": "^5.2.0",
+    "prettier": "1.10.2",
     "sinon": "^7.1.1",
     "sinon-chai": "^3.2.0"
   }

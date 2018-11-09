@@ -9,9 +9,12 @@ module.exports = () => {
     qs: {
       module: 'proxy',
       action: 'eth_blockNumber',
-      apiKey,
+      apiKey
     }
   };
-  return request.get(options).then(JSON.parse).then(response => parseInt(response.result, 16))
-    .catch(() => (undefined)); // ignore connection errors for now
+  return request
+    .get(options)
+    .then(JSON.parse)
+    .then(response => parseInt(response.result, 16))
+    .catch(() => undefined); // ignore connection errors for now
 };

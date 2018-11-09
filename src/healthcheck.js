@@ -6,7 +6,10 @@ const etherscanLatestBlock = require('./etherscan');
 const DEFAULT_STALE_BLOCK_THRESHOLD = 5; // we allow MAX 5 blocks lag from etherscan.io
 const nodeName = process.env.NEW_RELIC_PROCESS_HOST_DISPLAY_NAME;
 
-module.exports = async (compareWithEtherscan = true, healthyDeltaThreshold = process.env.STALE_BLOCK_THRESHOLD || DEFAULT_STALE_BLOCK_THRESHOLD) => {
+module.exports = async (
+  compareWithEtherscan = true,
+  healthyDeltaThreshold = process.env.STALE_BLOCK_THRESHOLD || DEFAULT_STALE_BLOCK_THRESHOLD
+) => {
   const promises = [web3.eth.getBlockNumber(), web3.eth.isSyncing(), web3.eth.net.getPeerCount()];
   if (compareWithEtherscan) {
     promises.push(etherscanLatestBlock());
