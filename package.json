@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx mocha"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +15,11 @@
     "node-cron": "^2.0.3",
     "request-promise-native": "^1.0.5",
     "web3": "^1.0.0-beta.36"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.1.1",
+    "sinon-chai": "^3.2.0"
   }
 }
