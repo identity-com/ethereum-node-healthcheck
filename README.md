@@ -1,4 +1,4 @@
-# Healtchek and heartbeat for your ethereum node
+# Healthcheck and heartbeat for your ethereum node
 This service connects to your ethereum node and periodically checks its state. 
 Node's blockNumber is compared to etherscan.io every minute. 
 Tested on geth, but should also work with parity as web3 1.0 is used. 
