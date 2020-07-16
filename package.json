@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "newrelic": "^4.10.0",
     "node-cron": "^2.0.3",
     "request-promise-native": "^1.0.5",
