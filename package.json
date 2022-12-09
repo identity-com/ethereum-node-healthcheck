@@ -15,7 +15,7 @@
     "url": "git+https://github.com/identity-com/ethereum-node-healthcheck.git"
   },
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "lodash": "^4.17.11",
     "newrelic": "^4.10.0",
     "node-cron": "^2.0.3",
